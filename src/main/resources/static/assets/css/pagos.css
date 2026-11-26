@@ -1,0 +1,141 @@
+/**
+ * Estilos del Módulo de Pagos Municipales y Recaudación (PROMPT 13)
+ */
+
+/* Subnavegación de pagos */
+.pagos-subnav {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 0.5rem;
+}
+
+.pagos-subnav-btn {
+  background: transparent;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.pagos-subnav-btn:hover {
+  color: var(--color-primary);
+  background-color: var(--color-bg-hover);
+}
+
+.pagos-subnav-btn.is-active {
+  color: var(--color-primary);
+  background-color: var(--color-primary-light);
+  border-bottom: 2px solid var(--color-primary);
+}
+
+/* Grilla de Resumen de Recaudación (ResumenPagosResponse) */
+.pagos-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+.pagos-summary-card {
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.pagos-summary-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background-color: var(--color-primary);
+}
+
+.pagos-summary-card.is-verified::before {
+  background-color: #1b873f;
+}
+
+.pagos-summary-card.is-pending::before {
+  background-color: #e37400;
+}
+
+.pagos-summary-card.is-rejected::before {
+  background-color: #c5221f;
+}
+
+.pagos-summary-card.is-anulado::before {
+  background-color: #5f6368;
+}
+
+.pagos-summary-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-text-secondary);
+  margin-bottom: 0.4rem;
+}
+
+.pagos-summary-value {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+  line-height: 1.2;
+}
+
+.pagos-summary-value.is-currency {
+  color: #137333;
+}
+
+.pagos-summary-hint {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  margin-top: 0.25rem;
+}
+
+/* Constancia de Pago preview */
+.pago-constancia-preview {
+  background-color: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 1.5rem;
+}
+
+.pago-constancia-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--color-primary);
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.pago-constancia-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--color-primary-dark);
+}
+
+.pago-monto-highlight {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #137333;
+  font-family: var(--font-mono, monospace);
+}

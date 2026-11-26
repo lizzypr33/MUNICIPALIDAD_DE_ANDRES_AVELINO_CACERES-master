@@ -1,0 +1,443 @@
+/**
+ * Estilos del Dashboard Administrativo Municipal (PROMPT 10)
+ * Tarjetas KPI, filtros por período, gráficos SVG (líneas y dona), resumen de solicitudes,
+ * tabla de actividad reciente, accesos rápidos, panel de notificaciones e información del sistema.
+ */
+
+/* Barra de herramientas y filtro por período del Dashboard */
+.dashboard-toolbar {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-4) var(--space-5);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.dashboard-filter-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--space-3);
+}
+
+.dashboard-filter-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.dashboard-filter-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.dashboard-filter-input {
+  padding: 0.48rem 0.75rem;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+.dashboard-filter-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.dashboard-toolbar-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.dashboard-last-updated {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+}
+
+.dashboard-filter-notice {
+  font-size: 0.78rem;
+  color: var(--color-info);
+  font-weight: 600;
+}
+
+/* Grilla de 6 tarjetas estadísticas principales (Sección 7) */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.kpi-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-5);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  position: relative;
+  overflow: hidden;
+}
+
+.kpi-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--color-primary);
+}
+
+.kpi-card.kpi-blue::before { background: #2563EB; }
+.kpi-card.kpi-green::before { background: #16A34A; }
+.kpi-card.kpi-orange::before { background: #EA580C; }
+.kpi-card.kpi-purple::before { background: #7C3AED; }
+.kpi-card.kpi-red-soft::before { background: #E11D48; }
+.kpi-card.kpi-emerald::before { background: #059669; }
+
+.kpi-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.kpi-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+}
+
+.kpi-value {
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: var(--color-text);
+  line-height: 1.2;
+}
+
+.kpi-subtext {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+}
+
+.kpi-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.kpi-blue .kpi-icon-box { background: #DBEAFE; color: #1D4ED8; }
+.kpi-green .kpi-icon-box { background: #DCFCE7; color: #15803D; }
+.kpi-orange .kpi-icon-box { background: #FFEDD5; color: #C2410C; }
+.kpi-purple .kpi-icon-box { background: #F3E8FF; color: #6D28D9; }
+.kpi-red-soft .kpi-icon-box { background: #FFE4E6; color: #BE123C; }
+.kpi-emerald .kpi-icon-box { background: #D1FAE5; color: #047857; }
+
+/* Grilla de gráficos (Secciones 9 y 10) */
+.dashboard-charts-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: var(--space-5);
+}
+
+.chart-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.chart-svg-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.line-chart-svg {
+  width: 100%;
+  height: auto;
+  min-height: 240px;
+  display: block;
+}
+
+/* Gráfico circular tipo dona */
+.donut-layout {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  align-items: center;
+  gap: var(--space-5);
+}
+
+.donut-svg {
+  width: 190px;
+  height: 190px;
+  margin: 0 auto;
+}
+
+.donut-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.donut-legend-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  font-size: 0.82rem;
+  padding: 0.25rem 0.4rem;
+  border-radius: var(--radius-sm);
+}
+
+.donut-legend-item:hover {
+  background: var(--color-surface-alt);
+}
+
+.donut-legend-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.donut-swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.donut-legend-values {
+  font-weight: 700;
+  color: var(--color-text);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Grilla intermedia: Resumen de solicitudes + Accesos rápidos (Secciones 11 y 13) */
+.dashboard-middle-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+}
+
+.summary-status-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.summary-status-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0.75rem;
+  border-radius: var(--radius-md);
+  background: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+}
+
+.summary-status-count {
+  font-size: 1rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Accesos rápidos */
+.quick-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+
+.quick-action-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 0.75rem 0.9rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: left;
+  transition: border-color var(--transition-fast), background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.quick-action-btn:hover {
+  border-color: var(--color-primary-light);
+  background: var(--color-primary-soft);
+  transform: translateY(-1px);
+}
+
+.quick-action-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Grilla inferior: Actividad reciente + Información del sistema (Secciones 12 y 15) */
+.dashboard-bottom-grid {
+  display: grid;
+  grid-template-columns: 1.65fr 1fr;
+  gap: var(--space-5);
+}
+
+.sysinfo-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.sysinfo-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.sysinfo-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.sysinfo-label {
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+}
+
+.sysinfo-value {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+/* Panel desplegable de notificaciones en el encabezado (Sección 14) */
+.notif-dropdown-wrapper {
+  position: relative;
+}
+
+.notif-dropdown-panel {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  width: 360px;
+  max-width: calc(100vw - 2rem);
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  z-index: 1050;
+  overflow: hidden;
+}
+
+.notif-panel-header {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--color-surface-alt);
+}
+
+.notif-panel-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.notif-panel-list {
+  max-height: 320px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.notif-panel-item {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.notif-panel-item:last-child {
+  border-bottom: none;
+}
+
+.notif-panel-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+}
+
+.notif-panel-msg {
+  font-size: 0.82rem;
+  color: var(--color-text);
+  line-height: 1.4;
+}
+
+.notif-panel-footer {
+  padding: var(--space-2) var(--space-4);
+  border-top: 1px solid var(--color-border);
+  background: var(--color-surface-alt);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Skeleton Loaders (Sección 18) */
+.skeleton {
+  background: linear-gradient(90deg, #E2E8F0 25%, #F1F5F9 50%, #E2E8F0 75%);
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.4s ease-in-out infinite;
+  border-radius: var(--radius-sm);
+}
+
+.skeleton-kpi {
+  height: 112px;
+  border-radius: var(--radius-lg);
+}
+
+.skeleton-chart {
+  height: 260px;
+  border-radius: var(--radius-md);
+}
+
+@keyframes skeleton-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}

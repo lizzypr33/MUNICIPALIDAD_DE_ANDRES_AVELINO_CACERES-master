@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel Municipal | Sistema de Gestión de Licencias Municipales</title>
+  <link rel="icon" type="image/png" href="/assets/images/escudo-mdaacd.png" />
+  <link rel="stylesheet" href="/assets/css/variables.css" />
+  <link rel="stylesheet" href="/assets/css/reset.css" />
+  <link rel="stylesheet" href="/assets/css/global.css" />
+  <link rel="stylesheet" href="/assets/css/layout.css" />
+  <link rel="stylesheet" href="/assets/css/components.css" />
+  <link rel="stylesheet" href="/assets/css/dashboard.css" />
+  <link rel="stylesheet" href="/assets/css/forms.css" />
+  <link rel="stylesheet" href="/assets/css/tables.css" />
+  <link rel="stylesheet" href="/assets/css/management.css" />
+  <link rel="stylesheet" href="/assets/css/solicitudes.css" />
+  <link rel="stylesheet" href="/assets/css/expediente.css" />
+  <link rel="stylesheet" href="/assets/css/documentos.css" />
+  <link rel="stylesheet" href="/assets/css/timeline.css" />
+  <link rel="stylesheet" href="/assets/css/licencias.css" />
+  <link rel="stylesheet" href="/assets/css/inspecciones.css" />
+  <link rel="stylesheet" href="/assets/css/pagos.css" />
+  <link rel="stylesheet" href="/assets/css/reportes.css" />
+  <link rel="stylesheet" href="/assets/css/notificaciones.css" />
+  <link rel="stylesheet" href="/assets/css/auditoria.css" />
+  <link rel="stylesheet" href="/assets/css/responsive.css" />
+</head>
+<body data-page="dashboard">
+  <a href="#main-content-area" class="skip-link">Saltar al contenido principal</a>
+
+  <!-- Guardia de autenticación antes de mostrar interfaz administrativa -->
+  <div id="dashboard-guard-screen" class="auth-guard-screen" aria-live="polite">
+    <div class="auth-guard-card">
+      <div class="spinner spinner-primary" aria-hidden="true"></div>
+      <p class="auth-guard-title">Validando sesión municipal...</p>
+      <p class="auth-guard-subtitle">Consultando credenciales y permisos de acceso.</p>
+    </div>
+  </div>
+
+  <!-- Contenedor administrativo principal -->
+  <div id="app-shell" class="app-shell" hidden>
+    <!-- Menú lateral institucional -->
+    <aside id="app-sidebar" class="app-sidebar" aria-label="Menú principal del sistema">
+      <div class="sidebar-brand">
+        <div class="brand-emblem-slot">
+          <img
+            src="/assets/images/escudo-mdaacd.png"
+            alt="Escudo Oficial MDAACD"
+            class="brand-emblem-img"
+            width="42"
+            height="42"
+          />
+        </div>
+        <div class="brand-text">
+          <span class="brand-entity">MD Andrés A. Cáceres D.</span>
+          <span class="brand-system">Licencias Municipales</span>
+        </div>
+        <button
+          type="button"
+          id="sidebar-close-btn"
+          class="sidebar-close-btn"
+          aria-label="Cerrar menú lateral"
+        >
+          ✕
+        </button>
+      </div>
+
+      <nav id="sidebar-nav-list" class="sidebar-nav" aria-label="Módulos administrativos"></nav>
+
+      <div class="sidebar-footer">
+        <button type="button" id="sidebar-logout-btn" class="sidebar-logout-btn">
+          <span>Cerrar sesión</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Fondo superpuesto para dispositivos móviles -->
+    <div id="sidebar-backdrop" class="sidebar-backdrop" hidden></div>
+
+    <!-- Encabezado institucional superior -->
+    <header class="app-header">
+      <div class="header-left">
+        <button
+          type="button"
+          id="header-menu-toggle"
+          class="header-menu-toggle"
+          aria-label="Abrir o cerrar menú de navegación"
+        >
+          ☰
+        </button>
+        <div class="header-titles">
+          <span class="header-institution">
+            MUNICIPALIDAD DISTRITAL DE ANDRÉS AVELINO CÁCERES DORREGARAY · AYACUCHO
+          </span>
+          <span class="header-system-name">
+            Sistema de Gestión de Licencias Municipales
+          </span>
+        </div>
+      </div>
+
+      <div class="header-right">
+        <div class="notif-dropdown-wrapper">
+          <button
+            type="button"
+            id="header-notif-btn"
+            class="header-icon-btn"
+            aria-haspopup="true"
+            aria-expanded="false"
+            aria-label="Abrir panel de notificaciones no leídas"
+            title="Notificaciones internas"
+          >
+            <span aria-hidden="true">🔔</span>
+            <span id="header-notif-badge" class="header-notif-badge" hidden>0</span>
+          </button>
+
+          <div
+            id="header-notif-panel"
+            class="notif-dropdown-panel"
+            role="region"
+            aria-label="Notificaciones recientes no leídas"
+            hidden
+          >
+            <div class="notif-panel-header">
+              <strong id="notif-panel-title" class="notif-panel-title">Notificaciones</strong>
+              <button
+                type="button"
+                id="notif-mark-all-btn"
+                class="btn btn-secondary btn-sm"
+                hidden
+              >
+                Marcar leídas
+              </button>
+            </div>
+            <div id="notif-panel-list" class="notif-panel-list"></div>
+            <div class="notif-panel-footer">
+              <button
+                type="button"
+                id="notif-go-all-btn"
+                class="btn btn-outline btn-sm"
+                style="width: 100%;"
+              >
+                Ver módulo de notificaciones
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="user-profile-dropdown">
+          <button
+            type="button"
+            id="user-profile-trigger"
+            class="user-profile-trigger"
+            aria-haspopup="true"
+            aria-expanded="false"
+            aria-label="Menú de perfil del usuario autenticado"
+          >
+            <span id="header-user-avatar" class="user-avatar">MU</span>
+            <span class="user-meta">
+              <span id="header-user-fullname" class="user-fullname">Usuario</span>
+              <span id="header-user-role" class="user-role-label">Rol</span>
+            </span>
+          </button>
+
+          <div id="profile-menu" class="profile-menu" role="menu" hidden>
+            <div class="profile-menu-header">
+              <strong id="profile-menu-fullname">Usuario</strong>
+              <p id="profile-menu-username" class="profile-menu-username"></p>
+            </div>
+            <button
+              type="button"
+              id="profile-go-config"
+              class="profile-menu-item"
+              role="menuitem"
+            >
+              Configuración y contraseña
+            </button>
+            <button
+              type="button"
+              id="header-logout-btn"
+              class="profile-menu-item is-danger"
+              role="menuitem"
+            >
+              Cerrar sesión
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Área principal de contenido -->
+    <main class="app-main">
+      <header class="page-header">
+        <div>
+          <nav class="breadcrumbs" aria-label="Ruta de navegación">
+            <span>Inicio</span>
+            <span class="breadcrumb-separator" aria-hidden="true">/</span>
+            <span id="breadcrumb-current" class="breadcrumb-current">Dashboard</span>
+          </nav>
+          <h1 id="main-page-title" class="page-title">Dashboard</h1>
+          <p id="main-page-subtitle" class="page-subtitle">
+            Panel principal del Sistema de Gestión de Licencias Municipales
+          </p>
+        </div>
+      </header>
+
+      <div id="main-content-area" tabindex="-1"></div>
+    </main>
+  </div>
+
+  <script type="module" src="/assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,217 @@
+/**
+ * Estilos institucionales para el Módulo de Auditoría del Sistema (PROMPT 14)
+ * Municipalidad Distrital de Andrés Avelino Cáceres Dorregaray
+ */
+
+.auditoria-module {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+/* Indicador de inmutabilidad y solo lectura */
+.auditoria-notice-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-primary-dark);
+  border-radius: var(--radius-md);
+  padding: 0.875rem 1.25rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.auditoria-notice-text {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.auditoria-badge-immutable {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.625rem;
+  background-color: var(--color-primary-soft);
+  color: var(--color-primary-dark);
+  border-radius: var(--radius-full);
+}
+
+/* Panel de filtros de búsqueda de auditoría */
+.auditoria-filters-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.auditoria-filters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  align-items: flex-end;
+}
+
+.auditoria-filters-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+  justify-content: flex-end;
+}
+
+/* Campos de texto y fecha de los filtros (clase .form-input no tenía estilos globales) */
+.auditoria-filters-card .form-input {
+  width: 100%;
+  padding: 0.65rem 0.875rem;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  font-size: 0.925rem;
+  color: var(--color-text);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.auditoria-filters-card .form-input:focus {
+  outline: none;
+  border-color: var(--color-primary-light);
+  box-shadow: var(--focus-ring);
+}
+
+/* Tarjeta de la tabla de registros (clases table-card / table-header / table-title sin estilos) */
+.auditoria-module .table-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.auditoria-module .table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.auditoria-module .table-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0;
+}
+
+/* Badges de acciones de auditoría */
+.badge-accion-creacion {
+  background-color: var(--color-info-bg);
+  color: var(--color-info);
+  border: 1px solid var(--color-info-border);
+}
+
+.badge-accion-actualizacion {
+  background-color: #E0E7FF;
+  color: #3730A3;
+  border: 1px solid #C7D2FE;
+}
+
+.badge-accion-aprobacion,
+.badge-accion-emision {
+  background-color: var(--color-success-bg);
+  color: var(--color-success);
+  border: 1px solid var(--color-success-border);
+}
+
+.badge-accion-observacion {
+  background-color: var(--color-warning-bg);
+  color: #B45309;
+  border: 1px solid var(--color-warning-border);
+}
+
+.badge-accion-rechazo,
+.badge-accion-suspension,
+.badge-accion-revocacion,
+.badge-accion-anulacion {
+  background-color: var(--color-danger-bg);
+  color: var(--color-danger);
+  border: 1px solid var(--color-danger-border);
+}
+
+/* Modal de detalle de auditoría */
+.auditoria-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 640px) {
+  .auditoria-detail-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.auditoria-detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  background-color: var(--color-surface-alt);
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+}
+
+.auditoria-detail-item.full-width {
+  grid-column: 1 / -1;
+}
+
+.auditoria-detail-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.auditoria-detail-value {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text);
+  word-break: break-word;
+}
+
+.auditoria-description-box {
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--color-text);
+  white-space: pre-wrap;
+  font-family: var(--font-mono);
+}
+
+.auditoria-ip-badge {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  background-color: #E2E8F0;
+  color: #334155;
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-sm);
+  display: inline-block;
+}

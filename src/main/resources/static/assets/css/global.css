@@ -1,0 +1,88 @@
+/**
+ * Estilos globales y utilidades transversales (PROMPT 09)
+ */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: var(--space-4);
+  z-index: 2000;
+  padding: var(--space-2) var(--space-4);
+  background-color: var(--color-primary-dark);
+  color: var(--color-text-inverse);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+  top: var(--space-3);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.is-hidden {
+  display: none !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-text);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+.text-mono {
+  font-family: var(--font-mono);
+}
+
+/* Pantalla de verificación inicial de sesión */
+.auth-guard-screen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  padding: var(--space-6);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  text-align: center;
+}
+
+.auth-guard-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-8);
+  max-width: 420px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.auth-guard-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+}
+
+.auth-guard-subtitle {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}

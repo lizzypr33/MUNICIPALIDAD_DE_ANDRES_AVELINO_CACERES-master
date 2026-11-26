@@ -1,0 +1,242 @@
+/* ==========================================================================
+   ESTILOS DE TABLAS REUTILIZABLES, ACCIONES Y PAGINACIÓN (PROMPT 11 - Secciones 16 y 17)
+   ========================================================================== */
+
+.table-responsive-wrap {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.855rem;
+}
+
+.data-table th {
+  padding: 0.78rem 0.95rem;
+  background-color: #F1F5F9;
+  color: var(--color-text-secondary);
+  font-weight: 700;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid var(--color-border-strong);
+  white-space: nowrap;
+}
+
+.data-table td {
+  padding: 0.78rem 0.95rem;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text-primary);
+  vertical-align: middle;
+}
+
+.data-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.data-table tbody tr:hover {
+  background-color: #F8FAFC;
+}
+
+.cell-primary {
+  font-weight: 600;
+  color: var(--color-text-primary);
+  display: block;
+}
+
+.cell-secondary {
+  font-size: 0.77rem;
+  color: var(--color-text-muted);
+  display: block;
+  margin-top: 0.15rem;
+}
+
+.cell-mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-primary-dark);
+}
+
+.badge-list-inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+/* Botones de acciones por fila */
+.table-actions-group {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.btn-table-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.32rem 0.6rem;
+  font-size: 0.76rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border-strong);
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  transition: background-color var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+  white-space: nowrap;
+}
+
+.btn-table-action:hover {
+  background-color: #F0F7FF;
+  border-color: var(--color-secondary);
+  color: var(--color-primary-dark);
+}
+
+.btn-table-action.is-primary {
+  background-color: #EFF6FF;
+  border-color: #BFDBFE;
+  color: var(--color-primary);
+}
+
+.btn-table-action.is-primary:hover {
+  background-color: #DBEAFE;
+}
+
+.btn-table-action.is-warning {
+  background-color: #FFFBEB;
+  border-color: #FDE68A;
+  color: #B45309;
+}
+
+.btn-table-action.is-warning:hover {
+  background-color: #FEF3C7;
+}
+
+.btn-table-action.is-danger {
+  background-color: #FEF2F2;
+  border-color: #FECACA;
+  color: var(--color-danger);
+}
+
+.btn-table-action.is-danger:hover {
+  background-color: #FEE2E2;
+}
+
+.btn-table-action.is-success {
+  background-color: #F0FDF4;
+  border-color: #BBF7D0;
+  color: var(--color-success);
+}
+
+.btn-table-action.is-success:hover {
+  background-color: #DCFCE7;
+}
+
+.btn-table-action:disabled {
+  opacity: 0.48;
+  cursor: not-allowed;
+}
+
+/* Estados vacíos y errores de tabla */
+.table-state-box {
+  padding: 2.3rem 1.25rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.table-state-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.table-state-subtitle {
+  font-size: 0.83rem;
+  color: var(--color-text-secondary);
+  max-width: 480px;
+}
+
+/* Barra de paginación reutilizable (Sección 17) */
+.pagination-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  padding: 0.85rem 1rem;
+  background-color: #F8FAFC;
+  border: 1px solid var(--color-border);
+  border-top: none;
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+}
+
+.pagination-info {
+  font-size: 0.82rem;
+  color: var(--color-text-secondary);
+}
+
+.pagination-info strong {
+  color: var(--color-text-primary);
+}
+
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.pagination-size-select {
+  padding: 0.32rem 0.55rem;
+  font-size: 0.8rem;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+  margin-right: 0.4rem;
+}
+
+.page-btn {
+  min-width: 32px;
+  height: 32px;
+  padding: 0 0.55rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border-strong);
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  transition: background-color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.page-btn:hover:not(:disabled) {
+  background-color: #F0F7FF;
+  border-color: var(--color-secondary);
+  color: var(--color-primary);
+}
+
+.page-btn.is-active {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #FFFFFF;
+}
+
+.page-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}

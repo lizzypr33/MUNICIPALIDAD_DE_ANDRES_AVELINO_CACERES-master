@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iniciar Sesión | Sistema de Gestión de Licencias Municipales</title>
+  <link rel="icon" type="image/png" href="/assets/images/escudo-mdaacd.png" />
+  <link rel="stylesheet" href="/assets/css/variables.css" />
+  <link rel="stylesheet" href="/assets/css/reset.css" />
+  <link rel="stylesheet" href="/assets/css/global.css" />
+  <link rel="stylesheet" href="/assets/css/components.css" />
+  <link rel="stylesheet" href="/assets/css/login.css" />
+  <link rel="stylesheet" href="/assets/css/responsive.css" />
+</head>
+<body data-page="login">
+  <a href="#login-form" class="skip-link">Saltar al formulario de inicio de sesión</a>
+
+  <!-- Pantalla de verificación previa de sesión -->
+  <div id="login-guard-screen" class="auth-guard-screen" aria-live="polite">
+    <div class="auth-guard-card">
+      <div class="spinner spinner-primary" aria-hidden="true"></div>
+      <p class="auth-guard-title">Verificando estado de autenticación...</p>
+    </div>
+  </div>
+
+  <!-- Contenedor principal de inicio de sesión -->
+  <div id="login-main-container" class="login-page" hidden>
+    <!-- Panel izquierdo institucional -->
+    <aside class="login-hero" aria-label="Información institucional">
+      <div class="login-hero-top">
+        <div class="login-emblem-wrapper">
+          <img
+            src="/assets/images/escudo-mdaacd.png"
+            alt="Escudo Oficial de la Municipalidad Distrital de Andrés Avelino Cáceres Dorregaray"
+            class="login-emblem-img"
+            width="72"
+            height="72"
+          />
+        </div>
+        <div>
+          <span class="login-location-tag">Ayacucho - Perú</span>
+        </div>
+      </div>
+
+      <div class="login-hero-content">
+        <h1 class="login-municipality-title">
+          MUNICIPALIDAD DISTRITAL DE ANDRÉS AVELINO CÁCERES DORREGARAY
+        </h1>
+        <p class="login-system-title">Sistema de Gestión de Licencias Municipales</p>
+        <p class="login-welcome-text">
+          Plataforma administrativa integral para la gestión de expedientes, evaluación técnica,
+          inspecciones municipales, emisión de licencias de funcionamiento con verificación QR,
+          control de pagos y trazabilidad institucional.
+        </p>
+
+        <div class="login-pillars">
+          <div class="login-pillar-item">
+            <strong>Trazabilidad Completa</strong>
+            <p>Seguimiento auditado en cada etapa del expediente municipal.</p>
+          </div>
+          <div class="login-pillar-item">
+            <strong>Certificados PDF con QR</strong>
+            <p>Verificación pública de vigencia y autenticidad de licencias.</p>
+          </div>
+          <div class="login-pillar-item">
+            <strong>Control por Roles</strong>
+            <p>Acceso diferenciado para administradores, supervisores, funcionarios y ciudadanos.</p>
+          </div>
+          <div class="login-pillar-item">
+            <strong>Seguridad Institucional</strong>
+            <p>Sesiones HTTP protegidas y validación CSRF en todas las operaciones.</p>
+          </div>
+        </div>
+      </div>
+
+      <footer class="login-hero-footer">
+        Municipalidad Distrital de Andrés Avelino Cáceres Dorregaray · Provincia de Huamanga, Ayacucho - Perú
+      </footer>
+    </aside>
+
+    <!-- Panel derecho con tarjeta de inicio de sesión -->
+    <main class="login-panel">
+      <section class="login-card" aria-labelledby="login-heading">
+        <header class="login-card-header">
+          <h2 id="login-heading" class="login-card-title">Iniciar sesión</h2>
+          <p class="login-card-subtitle">Ingresa tus credenciales para continuar.</p>
+        </header>
+
+        <div id="login-alert-box" class="alert alert-error" role="alert" hidden></div>
+
+        <form id="login-form" noValidate>
+          <div class="form-group">
+            <label for="login-username" class="form-label">
+              Usuario <span class="form-required" aria-hidden="true">*</span>
+            </label>
+            <div class="input-wrapper">
+              <input
+                type="text"
+                id="login-username"
+                name="username"
+                class="form-control"
+                placeholder="Ingrese su usuario"
+                autocomplete="username"
+                maxlength="50"
+                required
+                aria-label="Usuario"
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="login-password" class="form-label">
+              Contraseña <span class="form-required" aria-hidden="true">*</span>
+            </label>
+            <div class="input-wrapper">
+              <input
+                type="password"
+                id="login-password"
+                name="password"
+                class="form-control"
+                style="padding-right: 5.25rem;"
+                placeholder="Ingrese su contraseña"
+                autocomplete="current-password"
+                maxlength="72"
+                required
+                aria-label="Contraseña"
+              />
+              <button
+                type="button"
+                id="toggle-password-btn"
+                class="password-toggle-btn"
+                aria-label="Mostrar contraseña"
+                aria-pressed="false"
+              >
+                Mostrar
+              </button>
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            id="login-submit-btn"
+            class="btn btn-primary login-submit-btn"
+          >
+            Ingresar al sistema
+          </button>
+        </form>
+
+        <div class="login-help-box">
+          <strong>Asistencia institucional:</strong> Si requiere habilitación de cuenta o restablecimiento de credenciales, comuníquese con la oficina de administración del sistema de la municipalidad.
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="/assets/js/main.js"></script>
+</body>
+</html>

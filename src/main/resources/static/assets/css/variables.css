@@ -1,0 +1,73 @@
+/**
+ * Variables globales de diseño institucional
+ * Municipalidad Distrital de Andrés Avelino Cáceres Dorregaray - Ayacucho, Perú
+ */
+:root {
+  /* Paleta institucional obligatoria (PROMPT 09 - Sección 5) */
+  --color-primary: #0B4A87;
+  --color-primary-dark: #082F57;
+  --color-primary-light: #1769B5;
+  --color-primary-soft: #E8F1FB;
+
+  --color-background: #F4F7FB;
+  --color-surface: #FFFFFF;
+  --color-surface-alt: #F8FAFC;
+
+  --color-text: #172B4D;
+  --color-text-muted: #64748B;
+  --color-text-inverse: #FFFFFF;
+
+  --color-border: #E2E8F0;
+  --color-border-strong: #CBD5E1;
+
+  /* Estados semánticos */
+  --color-success: #16A34A;
+  --color-success-bg: #DCFCE7;
+  --color-success-border: #86EFAC;
+
+  --color-warning: #F59E0B;
+  --color-warning-bg: #FEF3C7;
+  --color-warning-border: #FCD34D;
+
+  --color-danger: #DC2626;
+  --color-danger-bg: #FEE2E2;
+  --color-danger-border: #FCA5A5;
+
+  --color-info: #2563EB;
+  --color-info-bg: #DBEAFE;
+  --color-info-border: #93C5FD;
+
+  /* Dimensiones del layout */
+  --sidebar-width: 260px;
+  --header-height: 76px;
+  --content-max-width: 1440px;
+
+  /* Bordes y sombras */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06);
+  --shadow-card: 0 4px 16px rgba(15, 23, 42, 0.06);
+  --shadow-lg: 0 12px 32px rgba(15, 23, 42, 0.14);
+  --focus-ring: 0 0 0 3px rgba(23, 105, 181, 0.32);
+
+  /* Tipografía */
+  --font-sans: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: Consolas, "Courier New", monospace;
+
+  /* Escala de espaciado */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+
+  /* Transiciones */
+  --transition-fast: 150ms ease;
+  --transition-normal: 220ms ease;
+}

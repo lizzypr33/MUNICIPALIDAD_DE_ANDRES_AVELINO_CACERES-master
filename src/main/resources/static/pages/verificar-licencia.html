@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Verificación de Licencia Municipal | Municipalidad Distrital de Andrés Avelino Cáceres Dorregaray</title>
+  <link rel="icon" type="image/png" href="/assets/images/escudo-mdaacd.png" />
+  <link rel="stylesheet" href="/assets/css/variables.css" />
+  <link rel="stylesheet" href="/assets/css/reset.css" />
+  <link rel="stylesheet" href="/assets/css/global.css" />
+  <link rel="stylesheet" href="/assets/css/components.css" />
+  <link rel="stylesheet" href="/assets/css/forms.css" />
+  <link rel="stylesheet" href="/assets/css/licencias.css" />
+  <link rel="stylesheet" href="/assets/css/responsive.css" />
+</head>
+<body data-page="verificar-licencia" class="public-verify-body">
+  <header class="public-verify-header">
+    <div class="public-verify-header__inner">
+      <div class="public-verify-brand">
+        <img
+          src="/assets/images/escudo-mdaacd.png"
+          alt="Escudo Oficial de la Municipalidad Distrital de Andrés Avelino Cáceres Dorregaray"
+          width="48"
+          height="48"
+          style="width: 48px; height: 48px; object-fit: contain; margin-right: 0.75rem; flex-shrink: 0;"
+        />
+        <div>
+          <h1 class="public-verify-org">MUNICIPALIDAD DISTRITAL DE ANDRÉS AVELINO CÁCERES DORREGARAY</h1>
+          <p class="public-verify-sub">Ayacucho - Perú • Plataforma Oficial de Verificación de Autenticidad</p>
+        </div>
+      </div>
+      <a href="/login.html" class="btn btn-secondary btn--sm">Acceso Administrativo</a>
+    </div>
+  </header>
+
+  <main class="public-verify-main" id="public-verify-main">
+    <div class="public-verify-container">
+      <header class="public-verify-title-box">
+        <h2 class="public-verify-heading">VERIFICACIÓN DE LICENCIA DE FUNCIONAMIENTO</h2>
+        <p class="public-verify-caption">
+          Comprobación pública e instantánea de la validez legal y vigencia de la licencia mediante código QR o identificador de verificación.
+        </p>
+      </header>
+
+      <!-- Formulario de consulta de token -->
+      <section class="card public-verify-form-card" aria-label="Búsqueda de verificación">
+        <div class="card-body">
+          <form id="public-verify-form" class="public-verify-form" novalidate>
+            <div class="form-group" style="flex: 1; margin-bottom: 0;">
+              <label for="verify-token-input" class="form-label">Identificador o Token de Verificación (QR)</label>
+              <input
+                type="text"
+                id="verify-token-input"
+                name="token"
+                class="form-control"
+                placeholder="Ingrese o pegue el token de verificación (ej. a1b2c3d4e5f6...)"
+                required
+                autocomplete="off"
+              />
+            </div>
+            <button type="submit" id="verify-submit-btn" class="btn btn-primary">
+              Verificar Autenticidad
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <!-- Contenedor del resultado de verificación -->
+      <section id="verify-result-mount" aria-live="polite" class="public-verify-result-mount"></section>
+
+      <footer class="public-verify-footer">
+        <p>Ley N.º 28976 — Ley Marco de Licencia de Funcionamiento y Medidas de Simplificación Administrativa.</p>
+        <p class="text-muted">La información mostrada en esta consulta es pública y oficial. No expone datos personales sensibles conforme a la Ley N.º 29733.</p>
+      </footer>
+    </div>
+  </main>
+
+  <script type="module" src="/assets/js/main.js"></script>
+</body>
+</html>

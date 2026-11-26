@@ -1,0 +1,220 @@
+/* ==========================================================================
+   ESTILOS DE SOLICITUDES, PESTAÑAS INTERNAS Y ASISTENTE POR PASOS (PROMPT 12)
+   ========================================================================== */
+
+.solicitudes-subnav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 0.65rem 1rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.solicitudes-tabs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.subnav-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0.95rem;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.subnav-tab-btn:hover {
+  background-color: #F1F5F9;
+  color: var(--color-primary-dark);
+}
+
+.subnav-tab-btn.is-active {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  border-color: var(--color-primary);
+}
+
+/* Etiquetas semánticas para EstadoSolicitud (Sección 17) */
+.estado-solicitud-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.24rem 0.62rem;
+  font-size: 0.73rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  border-radius: 999px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.estado-solicitud-BORRADOR {
+  background-color: #F1F5F9;
+  color: #475569;
+  border: 1px solid #CBD5E1;
+}
+
+.estado-solicitud-PRESENTADA {
+  background-color: #E0F2FE;
+  color: #0369A1;
+  border: 1px solid #BAE6FD;
+}
+
+.estado-solicitud-EN_REVISION {
+  background-color: #EFF6FF;
+  color: #1D4ED8;
+  border: 1px solid #BFDBFE;
+}
+
+.estado-solicitud-OBSERVADA {
+  background-color: #FEF3C7;
+  color: #B45309;
+  border: 1px solid #FDE68A;
+}
+
+.estado-solicitud-SUBSANADA {
+  background-color: #F3E8FF;
+  color: #6D28D9;
+  border: 1px solid #DDD6FE;
+}
+
+.estado-solicitud-APROBADA {
+  background-color: #DCFCE7;
+  color: #15803D;
+  border: 1px solid #BBF7D0;
+}
+
+.estado-solicitud-RECHAZADA {
+  background-color: #FEE2E2;
+  color: #B91C1C;
+  border: 1px solid #FECACA;
+}
+
+.estado-solicitud-ARCHIVADA {
+  background-color: #E2E8F0;
+  color: #334155;
+  border: 1px solid #CBD5E1;
+}
+
+/* Asistente por pasos de Nueva Solicitud (Sección 7) */
+.wizard-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.wizard-stepper {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.5rem;
+  padding: 1rem 1.25rem;
+  background-color: #F8FAFC;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.wizard-step-item {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.5rem 0.65rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+  font-size: 0.79rem;
+  color: var(--color-text-secondary);
+}
+
+.wizard-step-item.is-current {
+  border-color: var(--color-primary);
+  background-color: #EFF6FF;
+  color: var(--color-primary-dark);
+  font-weight: 700;
+}
+
+.wizard-step-item.is-completed {
+  border-color: #86EFAC;
+  background-color: #F0FDF4;
+  color: var(--color-success);
+}
+
+.wizard-step-num {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  background-color: #E2E8F0;
+  color: var(--color-text-primary);
+  flex-shrink: 0;
+}
+
+.wizard-step-item.is-current .wizard-step-num {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+}
+
+.wizard-step-item.is-completed .wizard-step-num {
+  background-color: var(--color-success);
+  color: #FFFFFF;
+}
+
+.wizard-body {
+  padding: 1.35rem 1.5rem;
+}
+
+.wizard-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  background-color: #F8FAFC;
+  border-top: 1px solid var(--color-border);
+}
+
+.wizard-choice-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 0.85rem;
+  margin-top: 0.65rem;
+}
+
+.wizard-choice-card {
+  padding: 0.9rem 1rem;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+  cursor: pointer;
+  text-align: left;
+  transition: border-color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.wizard-choice-card:hover {
+  border-color: var(--color-secondary);
+  background-color: #F8FAFC;
+}
+
+.wizard-choice-card.is-selected {
+  border-color: var(--color-primary);
+  background-color: #EFF6FF;
+}

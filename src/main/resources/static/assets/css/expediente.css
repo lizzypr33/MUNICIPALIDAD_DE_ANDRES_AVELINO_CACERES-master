@@ -1,0 +1,123 @@
+/* ==========================================================================
+   ESTILOS DE DETALLE DEL EXPEDIENTE, REQUISITOS Y PANELES DE EVALUACIÓN (PROMPT 12)
+   ========================================================================== */
+
+.expediente-header-banner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1.2rem 1.4rem;
+  background: linear-gradient(135deg, #082F57 0%, #0B4A87 100%);
+  color: #FFFFFF;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.expediente-banner-code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  margin: 0 0 0.25rem 0;
+}
+
+.expediente-banner-meta {
+  font-size: 0.84rem;
+  color: #E0F2FE;
+  margin: 0;
+}
+
+.expediente-actions-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 0.9rem 1.15rem;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.expediente-actions-buttons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.expediente-grid-layout {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.15rem;
+}
+
+.expediente-full-span {
+  grid-column: 1 / -1;
+}
+
+/* Lista de verificación de requisitos del expediente */
+.requisitos-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.requisito-check-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: #F8FAFC;
+}
+
+.requisito-check-item.is-fulfilled {
+  border-left: 4px solid var(--color-success);
+  background-color: #F0FDF4;
+}
+
+.requisito-check-item.is-pending {
+  border-left: 4px solid var(--color-warning);
+  background-color: #FFFBEB;
+}
+
+.requisito-check-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  max-width: 72%;
+}
+
+.requisito-check-title {
+  font-size: 0.87rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.requisito-check-desc {
+  font-size: 0.78rem;
+  color: var(--color-text-secondary);
+}
+
+/* Avisos destacados de observaciones y motivo de rechazo */
+.expediente-observation-banner {
+  padding: 1rem 1.15rem;
+  border-radius: var(--radius-md);
+  border-left: 4px solid var(--color-warning);
+  background-color: #FFFBEB;
+  color: #92400E;
+}
+
+.expediente-rejection-banner {
+  padding: 1rem 1.15rem;
+  border-radius: var(--radius-md);
+  border-left: 4px solid var(--color-danger);
+  background-color: #FEF2F2;
+  color: #991B1B;
+}
